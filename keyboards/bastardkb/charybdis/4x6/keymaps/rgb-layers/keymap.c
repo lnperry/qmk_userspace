@@ -12,7 +12,7 @@ enum charybdis_keymap_layers {
     LAYER_POINTER,
 };
 
-// --- Custom Keycodes for Macros & Home Row Mods ---
+// --- Custom Keycodes for Macros ---
 enum custom_keycodes {
     // Macros
     SPOTLIGHT = SAFE_RANGE,
@@ -20,16 +20,6 @@ enum custom_keycodes {
     WIN_LEFT,
     WIN_RIGHT,
     WIN_MAX,
-
-    // Home Row Mod Aliases for readability
-    A_CMD,
-    S_OPT,
-    D_CTL,
-    F_SFT,
-    J_SFT,
-    K_CTL,
-    L_OPT,
-    SCLN_CMD
 };
 
 // --- Layer Aliases ---
@@ -51,23 +41,21 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [LAYER_BASE] = LAYOUT(
-        // Left Hand
+        // Left Hand (24 keys)
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,
         LSFT_T(KC_ESC), A_CMD, S_OPT, D_CTL, F_SFT, KC_G,
         KC_LCTL, PT_Z,    KC_X,    KC_C,    KC_V,    KC_B,
-        // Thumbs
-                                   KC_SPC, KC_LGUI,   SYS,
-                                          KC_LALT,  KC_DEL,
 
-        // Right Hand
+        // Right Hand (24 keys)
         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_MINS,
         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSLS,
         KC_H,    J_SFT,   K_CTL,   L_OPT, SCLN_CMD, KC_QUOT,
         KC_N,    KC_M, KC_COMM,  KC_DOT, PT_SLSH, KC_RALT,
-        // Thumbs
-                 NAV,    KC_ENT,
-                 KC_BSPC
+
+        // All 8 Thumb Keys MUST be at the end
+        KC_SPC, KC_LGUI, SYS,   NAV,   KC_ENT,
+        KC_LALT, KC_DEL,  KC_BSPC
     ),
 
     [LAYER_NAV] = LAYOUT(
@@ -76,18 +64,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_BRID, KC_VOLU, KC_BRIU, _______, _______,
         _______, KC_MPRV, KC_VOLD, KC_MNXT, _______, _______,
         _______, _______, KC_MPLY, _______, _______, _______,
-        // Thumbs
-                                   _______, _______, _______,
-                                           _______, _______,
 
         // Right Hand
         _______, _______, _______, _______, _______, _______,
         KC_PGUP,   KC_HOME,   KC_UP,   KC_END, XXXXXXX, XXXXXXX,
         KC_PGDN,   KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
         _______, _______, _______, _______, _______, _______,
-        // Thumbs
-                 _______, _______,
-                 _______
+
+        // Thumbs (at the end)
+        _______, _______, _______, _______, _______,
+        _______, _______, _______
     ),
 
     [LAYER_SYS] = LAYOUT(
@@ -96,38 +82,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         _______, SPOTLIGHT, WIN_LEFT, WIN_MAX, WIN_RIGHT, XXXXXXX,
         _______, SCREENSHOT, XXXXXXX, _______, _______, _______,
-        // Thumbs
-                                   _______, _______, _______,
-                                           _______, _______,
 
         // Right Hand
           KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_F12,
         XXXXXXX, XXXXXXX, KC_MCTL, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        // Thumbs
-                 _______, _______,
-                 _______
+
+        // Thumbs (at the end)
+        _______, _______, _______, _______, _______,
+        _______, _______, _______
     ),
 
     [LAYER_POINTER] = LAYOUT(
-        // Left Hand (BTN1 is now on the far left)
+        // Left Hand
         KC_BTN1,  KC_BTN2,  KC_BTN3, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, DPI_MOD, S_D_MOD,
         XXXXXXX,  KC_LGUI,  KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,
         XXXXXXX,  _______,  DRGSCRL, SNIPING, XXXXXXX, XXXXXXX,
-        // Thumbs (Left)
-                                   KC_BTN1,  KC_BTN2,  KC_BTN3,
-                                   XXXXXXX,  KC_BTN2,
 
-        // Right Hand (BTN1 is now on the bottom)
+        // Right Hand
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT,  EE_CLR,
         S_D_MOD, DPI_MOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI, XXXXXXX,
         XXXXXXX, XXXXXXX, SNIPING, DRGSCRL, _______, XXXXXXX,
-        // Thumbs (Right)
-                                            KC_BTN3,  KC_BTN2,
-                                                     KC_BTN1
+
+        // Thumbs (at the end)
+        KC_BTN1,  KC_BTN2,  KC_BTN3, KC_BTN3,  KC_BTN2,
+        XXXXXXX,  KC_BTN2,  KC_BTN1
     ),
 };
 
@@ -142,16 +124,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING(SS_LGUI(SS_LSFT("5"))); // Command + Shift + 5
                 return false;
             case WIN_LEFT:
-                // Default Rectangle: Command + Option + Left Arrow
-                SEND_STRING(SS_LGUI(SS_LALT(SS_TAP(X_LEFT))));
+                // Correctly sends Command + Option + Left Arrow
+                register_code(KC_LGUI);
+                register_code(KC_LALT);
+                tap_code(KC_LEFT);
+                unregister_code(KC_LALT);
+                unregister_code(KC_LGUI);
                 return false;
             case WIN_RIGHT:
-                // Default Rectangle: Command + Option + Right Arrow
-                SEND_STRING(SS_LGUI(SS_LALT(SS_TAP(X_RIGHT))));
+                // Correctly sends Command + Option + Right Arrow
+                register_code(KC_LGUI);
+                register_code(KC_LALT);
+                tap_code(KC_RGHT);
+                unregister_code(KC_LALT);
+                unregister_code(KC_LGUI);
                 return false;
             case WIN_MAX:
-                // Default Rectangle: Command + Option + Enter
-                SEND_STRING(SS_LGUI(SS_LALT(SS_TAP(X_ENTER))));
+                // Correctly sends Command + Option + Enter
+                register_code(KC_LGUI);
+                register_code(KC_LALT);
+                tap_code(KC_ENT);
+                unregister_code(KC_LALT);
+                unregister_code(KC_LGUI);
                 return false;
         }
     }
