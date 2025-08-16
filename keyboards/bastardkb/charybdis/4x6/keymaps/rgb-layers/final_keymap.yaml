@@ -1,66 +1,64 @@
-# This is a "brute-force" keymap with explicit labels for every key
-# to work around a bug in keymap-drawer v0.22.1 where parse_config is ignored.
 layout:
   qmk_keyboard: bastardkb/charybdis/4x6/v2/splinky_3
   layout_name: LAYOUT
 layers:
   BASE:
-    - {t: Esc}
-    - {t: '1'}
-    - {t: '2'}
-    - {t: '3'}
-    - {t: '4'}
-    - {t: '5'}
-    - {t: '6'}
-    - {t: '7'}
-    - {t: '8'}
-    - {t: '9'}
-    - {t: '0'}
-    - {t: '-'}
-    - {t: Tab}
-    - {t: Q}
-    - {t: W}
-    - {t: E}
-    - {t: R}
-    - {t: T}
-    - {t: Y}
-    - {t: U}
-    - {t: I}
-    - {t: O}
-    - {t: P}
-    - {t: \}
-    - {t: Shift}
+    - KC_ESC
+    - KC_1
+    - KC_2
+    - KC_3
+    - KC_4
+    - KC_5
+    - KC_6
+    - KC_7
+    - KC_8
+    - KC_9
+    - KC_0
+    - KC_MINS
+    - KC_TAB
+    - KC_Q
+    - KC_W
+    - KC_E
+    - KC_R
+    - KC_T
+    - KC_Y
+    - KC_U
+    - KC_I
+    - KC_O
+    - KC_P
+    - KC_BSLS
+    - {t: Esc, h: Shift} # <-- Updated Shift/Esc Key
     - {t: A, h: Cmd}
     - {t: S, h: Opt}
     - {t: D, h: Ctrl}
     - {t: F, h: Shift}
-    - {t: G}
-    - {t: H}
+    - KC_G
+    - KC_H
     - {t: J, h: Shift}
     - {t: K, h: Ctrl}
     - {t: L, h: Opt}
     - {t: ';', h: Cmd}
-    - {t: ''''}
-    - {t: Ctrl}
+    - KC_QUOT
+    - KC_LCTL
     - {t: Z, h: Pointer}
-    - {t: X}
-    - {t: C}
-    - {t: V}
-    - {t: B}
-    - {t: N}
-    - {t: M}
-    - {t: ','}
-    - {t: .}
+    - KC_X
+    - KC_C
+    - KC_V
+    - KC_B
+    - KC_N
+    - KC_M
+    - KC_COMM
+    - KC_DOT
     - {t: /, h: Pointer}
-    - {t: Opt}
-    - {t: Space}
-    - {t: Cmd}
+    - KC_RALT
+    - KC_SPC
+    - KC_LGUI
     - {t: SYS, h: SYS}
     - {t: NAV, h: NAV}
-    - {t: Enter}
-    - {t: Opt}
-    - {t: Del}
-    - {t: Bksp}
+    - KC_ENT
+    - KC_LALT
+    - KC_DEL
+    - KC_BSPC
   NAV:
     - ''
     - ''
@@ -80,10 +78,10 @@ layers:
     - {t: Brigh+}
     - ''
     - ''
-    - {t: PgUp}
-    - {t: Home}
-    - {t: Up}
-    - {t: End}
+    - KC_PGUP
+    - KC_HOME
+    - KC_UP
+    - KC_END
     - ''
     - ''
     - ''
@@ -92,10 +90,10 @@ layers:
     - {t: Next}
     - ''
     - ''
-    - {t: PgDn}
-    - {t: Left}
-    - {t: Down}
-    - {t: Right}
+    - KC_PGDN
+    - KC_LEFT
+    - KC_DOWN
+    - KC_RGHT
     - ''
     - ''
     - ''
@@ -119,18 +117,18 @@ layers:
     - ''
     - ''
   SYS:
-    - {t: Boot}
-    - {t: F1}
-    - {t: F2}
-    - {t: F3}
-    - {t: F4}
-    - {t: F5}
-    - {t: F6}
-    - {t: F7}
-    - {t: F8}
-    - {t: F9}
-    - {t: F10}
-    - {t: F11}
+    - QK_BOOT
+    - KC_F1
+    - KC_F2
+    - KC_F3
+    - KC_F4
+    - KC_F5
+    - KC_F6
+    - KC_F7
+    - KC_F8
+    - KC_F9
+    - KC_F10
+    - KC_F11
     - ''
     - ''
     - ''
@@ -142,12 +140,12 @@ layers:
     - ''
     - ''
     - ''
-    - {t: F12}
+    - KC_F12
     - ''
     - {t: Spotlight}
-    - {t: Win Left}
+    - {t: Win ←} # <-- Updated Label
     - {t: Win Max}
-    - {t: Win Right}
+    - {t: Win →} # <-- Updated Label
     - ''
     - ''
     - {t: Mission Ctrl}
@@ -175,3 +173,78 @@ layers:
     - ''
     - ''
     - ''
+POINTER:
+    - {t: Boot}
+    - {t: EE CLR}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: Boot}
+    - {t: EE CLR}
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: DPI}
+    - {t: S/D}
+    - {t: S/D}
+    - {t: DPI}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: Cmd}
+    - {t: Opt}
+    - {t: Ctrl}
+    - {t: Shift}
+    - ''
+    - ''
+    - {t: Shift}
+    - {t: Ctrl}
+    - {t: Opt}
+    - {t: Cmd}
+    - ''
+    - ''
+    - ''
+    - {t: Drg Scroll}
+    - {t: Sniping}
+    - ''
+    - ''
+    - ''
+    - {t: Sniping}
+    - {t: Drg Scroll}
+    - ''
+    - ''
+    - {t: BTN2}
+    - {t: BTN1}
+    - {t: BTN3}
+    - {t: BTN3}
+    - {t: BTN1}
+    - ''
+    - {t: BTN2}
+    - {t: BTN2}
+# --- Custom Configuration for a Cleaner, Mac-Friendly Diagram ---
+parse_config:
+  qmk_remove_keycode_prefix:
+    - KC_
+  qmk_keycode_map:
+    KC_LGUI: Cmd
+    KC_RGUI: Cmd
+    KC_LALT: Opt
+    KC_RALT: Opt
+    KC_LCTL: Ctrl
+    KC_RCTL: Ctrl
+    KC_LSFT: Shift
+    KC_RSFT: Shift
+    KC_ENT: Enter
+    KC_BSPC: Bksp
+    KC_DEL: Del
+    KC_ESC: Esc
+    KC_TAB: Tab
+    QK_BOOT: Boot

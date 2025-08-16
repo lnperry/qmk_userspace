@@ -1,0 +1,23 @@
+# This file contains the parsing and drawing rules.
+draw_config:
+  # Explicitly list all layers you want to draw in the final image
+  layers: [BASE, NAV, SYS, POINTER]
+
+parse_config:
+  qmk_remove_keycode_prefix:
+    - KC_
+  qmk_keycode_map:
+    KC_LGUI: Cmd
+    KC_RGUI: Cmd
+    KC_LALT: Opt
+    KC_RALT: Opt
+    KC_LCTL: Ctrl
+    KC_RCTL: Ctrl
+    KC_LSFT: Shift
+    KC_RSFT: Shift
+    KC_ENT: Enter
+    KC_BSPC: Bksp
+    KC_DEL: Del
+    KC_ESC: Esc
+    KC_TAB: Tab
+    QK_BOOT: Boot

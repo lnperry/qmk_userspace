@@ -21,24 +21,13 @@
 #    define DYNAMIC_KEYMAP_LAYER_COUNT 4
 #endif // VIA_ENABLE
 
-#ifndef __arm__
-/* Disable unused features. */
-#    define NO_ACTION_ONESHOT
-#endif // __arm__
+// This is the crucial setting for Home Row Mods. 200ms is a good starting point.
+#define TAPPING_TERM 200
 
-/* Charybdis-specific features. */
+// We still need these from our previous debugging.
+#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
+#define SPLIT_USB_DETECT
 
 #ifdef POINTING_DEVICE_ENABLE
-// Automatically enable the pointer layer when moving the trackball.  See also:
-// - `CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS`
-// - `CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD`
-#define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
+#    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 #endif // POINTING_DEVICE_ENABLE
-
-// --- ADD THESE TWO LINES FOR STABILITY ---
-
-// Limit the maximum brightness to prevent power-related crashes
-#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
-
-// Improve split keyboard detection
-#define SPLIT_USB_DETECT
