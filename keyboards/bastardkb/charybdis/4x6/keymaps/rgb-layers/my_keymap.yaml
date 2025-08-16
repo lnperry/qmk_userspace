@@ -1,0 +1,245 @@
+# Accurate visual representation of the Charybdis 4x6 rgb-layers keymap
+layout:
+  qmk_keyboard: bastardkb/charybdis/4x6
+  layout_name: LAYOUT
+layers:
+  BASE:
+    # Left Hand
+    - {t: Esc}
+    - {t: '1'}
+    - {t: '2'}
+    - {t: '3'}
+    - {t: '4'}
+    - {t: '5'}
+    - {t: Tab}
+    - {t: Q}
+    - {t: W}
+    - {t: E}
+    - {t: R}
+    - {t: T}
+    - {t: Esc, h: Shift}
+    - {t: A, h: Cmd}
+    - {t: S, h: Opt}
+    - {t: D, h: Ctrl}
+    - {t: F, h: Shift}
+    - {t: G}
+    - {t: Ctrl}
+    - {t: Z, h: Pointer}
+    - {t: X}
+    - {t: C}
+    - {t: V}
+    - {t: B}
+    # Right Hand
+    - {t: '6'}
+    - {t: '7'}
+    - {t: '8'}
+    - {t: '9'}
+    - {t: '0'}
+    - {t: '-'}
+    - {t: Y}
+    - {t: U}
+    - {t: I}
+    - {t: O}
+    - {t: P}
+    - {t: \}
+    - {t: H}
+    - {t: J, h: Shift}
+    - {t: K, h: Ctrl}
+    - {t: L, h: Opt}
+    - {t: ';', h: Cmd}
+    - {t: ''''}
+    - {t: N}
+    - {t: M}
+    - {t: ','}
+    - {t: .}
+    - {t: /, h: Pointer}
+    - {t: R-Opt}
+    # Thumbs
+    - {t: Space}
+    - {t: Cmd}
+    - {t: SYS, h: SYS}
+    - {t: NAV, h: NAV}
+    - {t: Enter}
+    - {t: Opt}
+    - {t: Del}
+    - {t: Bksp}
+  NAV:
+    # Left Hand
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: Brite-}
+    - {t: Vol+}
+    - {t: Brite+}
+    - ''
+    - ''
+    - ''
+    - {t: Prev}
+    - {t: Vol-}
+    - {t: Next}
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: Play}
+    - ''
+    - ''
+    - ''
+    # Right Hand
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: PgUp}
+    - {t: Home}
+    - {t: Up}
+    - {t: End}
+    - ''
+    - ''
+    - {t: PgDn}
+    - {t: Left}
+    - {t: Down}
+    - {t: Right}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    # Thumbs
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+  SYS:
+    # Left Hand
+    - {t: Boot}
+    - {t: F1}
+    - {t: F2}
+    - {t: F3}
+    - {t: F4}
+    - {t: F5}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: Spotlight}
+    - {t: Win ←}
+    - {t: Win Max}
+    - {t: Win →}
+    - ''
+    - ''
+    - {t: Sshot}
+    - ''
+    - ''
+    - ''
+    - ''
+    # Right Hand
+    - {t: F6}
+    - {t: F7}
+    - {t: F8}
+    - {t: F9}
+    - {t: F10}
+    - {t: F11}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: F12}
+    - ''
+    - ''
+    - {t: M-Ctrl}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    # Thumbs
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+  POINTER:
+    # Left Hand
+    - {t: BTN1}
+    - {t: BTN2}
+    - {t: BTN3}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: DPI}
+    - {t: S/D}
+    - ''
+    - {t: Cmd}
+    - {t: Opt}
+    - {t: Ctrl}
+    - {t: Shift}
+    - ''
+    - ''
+    - ''
+    - {t: DrgScroll}
+    - {t: Sniping}
+    - ''
+    - ''
+    # Right Hand
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: Boot}
+    - {t: EE Clr}
+    - {t: S/D}
+    - {t: DPI}
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - {t: Shift}
+    - {t: Ctrl}
+    - {t: Opt}
+    - {t: Cmd}
+    - ''
+    - ''
+    - ''
+    - {t: Sniping}
+    - {t: DrgScroll}
+    - ''
+    - ''
+    # Thumbs
+    - {t: BTN1}
+    - {t: BTN2}
+    - {t: BTN3}
+    - {t: BTN3}
+    - {t: BTN2}
+    - ''
+    - {t: BTN2}
+    - {t: BTN1}
